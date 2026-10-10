@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Love Heart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="heart" aria-label="A heart drawn from the words 'I love you' in many languages."></canvas>
+
+<div id="polaroid">
+    <div class="stack">
+        <div class="pol pol-a">
+            <div class="drift">
+                <div class="flip" id="flip-a">
+                    <figure class="polaroid-card">
+                        <img class="photo" id="photo-a" alt="">
+                        <figcaption class="caption" id="caption-a"></figcaption>
+                    </figure>
+                    <div class="letter" aria-live="polite">
+                        <p class="letter-text" id="letter-a"></p>
+                        <p class="letter-turn">tap to turn back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pol pol-b">
+            <div class="drift">
+                <div class="flip" id="flip-b">
+                    <figure class="polaroid-card">
+                        <img class="photo" id="photo-b" alt="">
+                        <figcaption class="caption" id="caption-b"></figcaption>
+                    </figure>
+                    <div class="letter" aria-live="polite">
+                        <p class="letter-text" id="letter-b"></p>
+                        <p class="letter-turn">tap to turn back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="flash" aria-hidden="true"></div>
+<p id="feel">Tap to feel the heartbeat</p>
+<p id="letter-hint">Tap a photo to read my letter</p>
+<button id="replay" type="button">Replay</button>
+
+<button id="sound" type="button" aria-label="Mute music">
+    <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke-width="1.8" stroke-linecap="round"/></svg>
+</button>
+
+<!-- phones only allow sound after a tap, so it opens like a little gift -->
+<div id="intro" role="button" tabindex="0" aria-label="Tap to open">
+    <svg class="intro-heart" viewBox="0 0 32 29" aria-hidden="true">
+        <defs>
+            <linearGradient id="ih" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffb3c6"/>
+                <stop offset="0.5" stop-color="#ff4d6d"/>
+                <stop offset="1" stop-color="#c9184a"/>
+            </linearGradient>
+        </defs>
+        <path fill="url(#ih)" d="M16 28.5C6.5 21.2 0 15.4 0 8.6 0 3.8 3.7 0 8.4 0c3 0 5.8 1.5 7.6 4 1.8-2.5 4.6-4 7.6-4C28.3 0 32 3.8 32 8.6c0 6.8-6.5 12.6-16 19.9z"/>
+    </svg>
+    <p class="intro-for" id="intro-for">For you</p>
+    <p class="intro-tap">tap to open</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
